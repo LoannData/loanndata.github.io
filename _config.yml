@@ -25,12 +25,9 @@ minimal_mistakes_skin: default
 search: true
 
 # Build settings
-markdown: Pandoc
-pandoc:
-  extensions:
-    - normalize
-    - smart
-    - mathjax
+markdown: kramdown
+kramdown:
+    math_engine: katex
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "sunrise" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 # Outputting
@@ -63,12 +60,11 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-pandoc
 
 author:
   name   : "Loann Brahimi"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Data Scientist and Quantitative Researcher/Developper. I have a PhD in Astrophysics and an experience in developing data driven systems on financial markets."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -101,6 +97,14 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _resume
+  - scope:
+      path: "_resume"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      classes: wide
   # _posts
   - scope:
       path: ""

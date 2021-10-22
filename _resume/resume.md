@@ -2,14 +2,16 @@
 permalink: /resume/
 title: "Resume"
 ---
-This is my resume! 
 
-#include "education.md"
+## [Work Experience](experience.md)
 
-<<[here](education.md) is my education 
+## [Academic Realisations](academic.md) 
 
-```include
-education.md
-```
+## [Education](education.md)
 
+## [Hard and Soft skills](skills.md) 
+
+## [Other projects](projects.md) 
+
+## [Personal activities](personal.md) 
 
