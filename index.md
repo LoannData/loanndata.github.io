@@ -4,4 +4,9 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 author_profile: true
+classes: wide
 ---
+
+This is now the homepage.
+
+$$f(x) = x^2$$
