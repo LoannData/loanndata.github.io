@@ -21,11 +21,21 @@ Brahimi L., Ptuskin V.*
 
 ## Talks 
 
-Soon ... 
+- 06/2018: *Poster presentation* - **CRISM**-Grenoble, France
+- 06/2018: *Talk* - **MODE**-Montpellier, France
+- 11/2018: *Poster presentation* - **Astrosim2018**-Lyon, France
+- 05/2019: *Talk* - **CFROS2**-Montpellier, France
+- 07/2019: *Talk* - **ICRC2019**-Madison, WI, USA
+- 11/2019: *Talk* - **Cargese2019**-Corsica  
 
 ## Summer Schools 
 
-Soon ... 
+- 06/2017: **Astrosim** - *2 weeks. Lyon, France* 
+- 03/2018: **Data Sciences for Experimental Physics** - *1 week, Montpellier, France*
+- 06/2018: **School Of Statistics** - *1 week, Toulon, France*
+- 09/2018: **Plasma Astrophysics** - *2 weeks, Los Angeles, CA, USA* 
+- 05/2019: **Ecole de physique des Houches - Plasma Astrophysics** - *2 weeks, Les Houches, France*
+- 06/2019: **Astronomy observations at the Observatoire: Midi-Pyrénées** - *10 days, Pic du Midi, France* 
 
 ## Teaching 
 

@@ -42,4 +42,5 @@ company DeepLearning.AI
 - [Deploying Machine Learning Models in Production](https://www.coursera.org/account/accomplishments/certificate/EN5NSW8GY9QJ)
   
 
+
 ## [$$\rightarrow$$ Hard and Soft skills](skills.md)
