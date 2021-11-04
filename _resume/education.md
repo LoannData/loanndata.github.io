@@ -43,4 +43,4 @@ company DeepLearning.AI
   
 
 
-## [$$\rightarrow$$ Hard and Soft skills](skills.md)
+## [$$\rightarrow$$ Hard and Soft skills](skills.md) 

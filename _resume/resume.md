@@ -11,7 +11,8 @@ title: "Resume"
 
 ## [Hard and Soft skills](skills.md) 
 
-## [Other projects](projects.md) 
+<!-- <iframe src="/_resume/figure.html" height="1000px" width="100%" style="border:none;"></iframe> -->
 
-## [Personal activities](personal.md) 
+
+
 

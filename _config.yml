@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 twitter_username: username
 github_username: LoannData
-minimal_mistakes_skin: default
+# minimal_mistakes_skin: default
 search: true
 
 # Build settings
@@ -44,6 +44,7 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 include:
   - _pages
   - _resume
+  - _portfolio
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -63,13 +64,15 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
+  - jekyll-mentions
   - jekyll-include-cache
+  - jemoji
+
 
 author:
   name   : "Loann Brahimi"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Data Scientist and Quantitative Researcher/Developper. I have a PhD in Astrophysics and an experience in developing data driven systems on financial markets."
+  bio    : "Data Scientist and Quantitative Researcher/Developer. I have a PhD in Astrophysics and an experience in developing data driven systems on financial markets."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -79,7 +82,7 @@ author:
       url: "https://github.com/LoannData/"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/loann-brahimi/"
+      url: "https://www.linkedin.com/in/loann-brahimi/?locale=en_US"
 
 
 footer:
@@ -110,6 +113,13 @@ defaults:
       layout: single
       author_profile: true
       classes: wide
+  # _portfolio
+  - scope:
+      path: "_portfolio"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
   # _posts
   - scope:
       path: ""

@@ -3,33 +3,9 @@ permalink: /_resume/skills/
 title: "Hard and Soft skills"
 author_profile: true
 classes: wide
-layout: splash
+# layout: splash
 ---
-## [$$\rightarrow$$ Other projects](projects.md)
 
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Markmap</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-#mindmap {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
-</style>
+<iframe src="/_resume/markmap.html" height="600px" width="100%" style="border:none;"></iframe>
 
-</head>
-<body>
-<svg id="mindmap"></svg>
-<script src="https://cdn.jsdelivr.net/npm/d3@6.6.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.3"></script><script>((e,t,r)=>{const{Markmap:n}=e();window.mm=n.create("svg#mindmap",null==t?void 0:t(),r)})(()=>window.markmap,t=>{return t=t||window.d3,{color:(n=t.scaleOrdinal(t.schemeCategory10),t=>n(t.p.i))};var n},{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"Skills","c":[{"t":"heading","d":2,"p":{"lines":[3,4]},"v":"Hard","c":[{"t":"heading","d":3,"p":{"lines":[6,7]},"v":"Scientific","c":[{"t":"heading","d":4,"p":{"lines":[9,10]},"v":"Mathematics &amp; Physics","c":[{"t":"list_item","d":6,"p":{"lines":[11,12]},"v":"Astrophysics"},{"t":"list_item","d":6,"p":{"lines":[12,13]},"v":"Thermodynamics"},{"t":"list_item","d":6,"p":{"lines":[13,14]},"v":"Quantum Field Theory"},{"t":"list_item","d":6,"p":{"lines":[14,15]},"v":"Turbulence Theory"},{"t":"list_item","d":6,"p":{"lines":[15,16]},"v":"Transport Theory"},{"t":"list_item","d":6,"p":{"lines":[16,17]},"v":"Fluid Mechanic"},{"t":"list_item","d":6,"p":{"lines":[17,18]},"v":"Magnetohydrodynamics"},{"t":"list_item","d":6,"p":{"lines":[18,19]},"v":"Chaotic systems Theory"},{"t":"list_item","d":6,"p":{"lines":[19,20]},"v":"Stochastic calculus"},{"t":"list_item","d":6,"p":{"lines":[20,21]},"v":"Statistics &amp; Probabilities"}]},{"t":"heading","d":4,"p":{"lines":[22,23]},"v":"Computing Science","c":[{"t":"list_item","d":6,"p":{"lines":[24,25]},"v":"Numerical methods"},{"t":"list_item","d":6,"p":{"lines":[25,26]},"v":"Finite difference/volume methods"},{"t":"list_item","d":6,"p":{"lines":[26,27]},"v":"PDE solvers"},{"t":"list_item","d":6,"p":{"lines":[27,28]},"v":"Monte-Carlo simulations"},{"t":"list_item","d":6,"p":{"lines":[28,29]},"v":"High-Performance Calculation"},{"t":"list_item","d":6,"p":{"lines":[29,30]},"v":"Cloud computing"},{"t":"list_item","d":6,"p":{"lines":[30,31]},"v":"Numerical Fluid Mechanics &amp; Turbulence"},{"t":"list_item","d":6,"p":{"lines":[31,32]},"v":"Optimization methods"}]},{"t":"heading","d":4,"p":{"lines":[33,34]},"v":"Artificial Intelligence"},{"t":"heading","d":4,"p":{"lines":[35,36]},"v":"Financial markets","c":[{"t":"list_item","d":6,"p":{"lines":[37,38]},"v":"Algorithmic trading"},{"t":"list_item","d":6,"p":{"lines":[38,39]},"v":"Backtest/Stresstest methods"},{"t":"list_item","d":6,"p":{"lines":[39,40]},"v":"Risk management"}]}]},{"t":"heading","d":3,"p":{"lines":[41,42]},"v":"Frameworks","c":[{"t":"heading","d":4,"p":{"lines":[43,44]},"v":"Programing languages","c":[{"t":"list_item","d":6,"p":{"lines":[45,46]},"v":"Python"},{"t":"list_item","d":6,"p":{"lines":[46,47]},"v":"C++"},{"t":"list_item","d":6,"p":{"lines":[47,48]},"v":"Fortran90"},{"t":"list_item","d":6,"p":{"lines":[48,49]},"v":"Shell"},{"t":"list_item","d":6,"p":{"lines":[49,50]},"v":"HTML/CSS"},{"t":"list_item","d":6,"p":{"lines":[50,51]},"v":"LaTeX/Markdown"}]},{"t":"heading","d":4,"p":{"lines":[52,53]},"v":"Coding Libraries","c":[{"t":"list_item","d":6,"p":{"lines":[54,55]},"v":"Numpy, Scipy, Matplotlib, Seaborn"},{"t":"list_item","d":6,"p":{"lines":[55,56]},"v":"Pandas"},{"t":"list_item","d":6,"p":{"lines":[56,57]},"v":"Tensorflow, Scikit-learn"},{"t":"list_item","d":6,"p":{"lines":[57,58]},"v":"Socket"},{"t":"list_item","d":6,"p":{"lines":[58,59]},"v":"Plotly, Dash"}]},{"t":"heading","d":4,"p":{"lines":[60,61]},"v":"Other","c":[{"t":"list_item","d":6,"p":{"lines":[62,63]},"v":"SQL, noSQL"},{"t":"list_item","d":6,"p":{"lines":[63,64]},"v":"Django, Flask, FastAPI"},{"t":"list_item","d":6,"p":{"lines":[64,65]},"v":"Github"}]}]}]},{"t":"heading","d":2,"p":{"lines":[66,67]},"v":"Soft","c":[{"t":"heading","d":3,"p":{"lines":[68,69]},"v":"Communication","c":[{"t":"list_item","d":5,"p":{"lines":[70,71]},"v":"French (Native)"},{"t":"list_item","d":5,"p":{"lines":[71,72]},"v":"Engish (C1)"},{"t":"list_item","d":5,"p":{"lines":[72,73]},"v":"Report Writing"},{"t":"list_item","d":5,"p":{"lines":[73,74]},"v":"Oral presentation"},{"t":"list_item","d":5,"p":{"lines":[74,75]},"v":"Web Communication"}]},{"t":"heading","d":3,"p":{"lines":[76,77]},"v":"Management","c":[{"t":"list_item","d":5,"p":{"lines":[78,79]},"v":"Project/Team Management (Agile methods)"},{"t":"list_item","d":5,"p":{"lines":[79,80]},"v":"Business Optimization strategy"}]}]}]})</script>
-</body>
-</html>
-
-## ...
+## [$$\rightarrow$$ Resume](resume.md)
