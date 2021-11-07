@@ -74,9 +74,12 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Data Scientist and Quantitative Researcher/Developer. I have a PhD in Astrophysics and an experience in developing data driven systems on financial markets."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://loanndata.github.io/"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:loann.brahimi@outlook.fr"
+    # - label: "Website"
+    #   icon: "fas fa-fw fa-link"
+    #   url: "https://loanndata.github.io/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/LoannData/"
@@ -87,9 +90,12 @@ author:
 
 footer:
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://loanndata.github.io/"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:loann.brahimi@outlook.fr"
+    # - label: "Website"
+    #   icon: "fas fa-fw fa-link"
+    #   url: "https://loanndata.github.io/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/LoannData/"
