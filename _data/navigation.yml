@@ -3,6 +3,8 @@ main:
     url: /resume/
   - title: "Portfolio"
     url: "/portfolio/"
+  - title: "Alpha-Trading"
+    url: "/_alphatrading/"
   - title: "Posts"
     url: /posts/
   # - title: "Categories"

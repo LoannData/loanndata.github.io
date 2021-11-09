@@ -45,6 +45,7 @@ include:
   - _pages
   - _resume
   - _portfolio
+  - _alphatrading
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -122,6 +123,13 @@ defaults:
   # _portfolio
   - scope:
       path: "_portfolio"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _alphatrading
+  - scope:
+      path: "_alphatrading"
       type: pages
     values:
       layout: single
