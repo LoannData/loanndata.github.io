@@ -8,14 +8,14 @@ toc_sticky: true
 
 Some examples of use of the Q26 Alpha-Trading tool. 
 
-## [Backtester]()
+## [Backtester](/_alphatrading/module_backtest)
 ### [A simple backtest](/_alphatrading/handson_simplebacktest)
 Learn to prepare an perform a simple backtest on basic financial data using a basic simple moving average crossover strategy
 
 ### [Basics of parameters optimization (Soon)]()
 Learn to configure the backtester to perform parameter optimisation on a simple SMA crossover strategy
 
-## [Live Trading]()
+## [Live Trading](/_alphatrading/module_livetrading)
 
 ### [Run live a simple strategy (Soon)]() 
 Learn how to run your own trading strategy live with the example of a simple SMA crossover scalper 
