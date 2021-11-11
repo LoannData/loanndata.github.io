@@ -1,9 +1,10 @@
 ---
-# permalink: /_alphatrading/handson_simplebacktest
+permalink: /_alphatrading/handson_simplebacktest
 title: "Handson - A simple backtest"
 toc: true
 toc_label: "Hands-on"
 toc_sticky: true
+# classes: wide
 ---
 
 ## [Introduction](#introduction)
