@@ -8,6 +8,8 @@ toc_sticky: true
 
 Some examples of use of the Q26 Alpha-Trading tool. 
 
+Please, do not hesitate to report **[here](https://github.com/LoannData/Q26_AlphaTrading/issues)** any **bug**, any **need** or **comment** which could contribute to improve the quality and the efficiency of the tool! 
+
 ## [Backtester](/_alphatrading/module_backtest)
 ### [A simple backtest](/_alphatrading/handson_simplebacktest)
 Learn to prepare an perform a simple backtest on basic financial data using a basic simple moving average crossover strategy
