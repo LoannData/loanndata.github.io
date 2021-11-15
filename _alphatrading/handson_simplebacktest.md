@@ -631,15 +631,49 @@ at least remove useless elements in the ```PORTFOLIO.trading_log_actions``` list
 Once you have done your simulation, you can get the results. The available functions to print results from the simulation are stored in the classes [WRITER](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1writer_1_1WRITER.html) and [ANALYSIS](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1analysis_1_1ANALYSIS.html). You can directly apply them to the SIMULATION object as for example : 
 
 ```python 
+# We print some basic simulation results 
+results = sim.get_basic_results(client_id=0)
 # We write the results in a csv file 
 sim.writeClosedPositionsFile(index = 0)
 # We plot the equity curve 
 fig, ax = sim.showEquityCurve(index = [0])
 ```
 
+The variable ```results``` refers to a basic statistics resume of your backtest: 
+
+```shell
+{'Average trade duration': '0:34:22.751505',
+ 'Cumulated gains': 1199.9999999999982,
+ 'Cumulated losses': -1357.7000000000276,
+ 'End date': '2020-01-31 16:58:00',
+ 'Initial Deposit': 100000,
+ 'Loosers average loss': -1.9340455840456232,
+ 'Loosers average loss percentage': -0.0019340455840456234,
+ 'Loosers ratio': 0.5308284787113476,
+ 'Max trade duration': '2 days, 7:14:00',
+ 'Maximum drawdown': 0.003060692238050209,
+ 'Min trade duration': '0:01:00',
+ 'Number of loosers': 702,
+ 'Number of loosers long': 356,
+ 'Number of loosers short': 346,
+ 'Number of transactions': 1163,
+ 'Number of winners': 461,
+ 'Number of winners long': 228,
+ 'Number of winners short': 233,
+ 'Number trades still open': 1,
+ 'P&L': -157.70000000003012,
+ 'P&L in percentage': -0.15770000000003012,
+ 'Profit factor': -0.88384768358251,
+ 'Start date': '2020-01-03 02:20:00',
+ 'Symbols': ['EUR.USD'],
+ 'Winners average gain': 2.6030368763557443,
+ 'Winners average gain percentage': 0.0026030368763557445,
+ 'Winners ratio': 0.46917152128865236}
+```
+
 But if you want to make a personal data analysis, you can directly get information from the [SIMULATION.portfolio[index]](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1portfolio_1_1PORTFOLIO.html) object. Here are stored all the transactions history and the equity curve. 
 
-**This last part will be improved soon ...**
+You can also retrieve data from the database you created. Later, some usefull tools will be implemented for this purpose. 
 
 ## Conclusion 
 
