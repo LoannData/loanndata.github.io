@@ -171,9 +171,74 @@ to simulate very small price fluctuations.
 
 ## 1.3 Structure and components 
 
-## 1.4 Components importation 
+The Alpha-Trading backtest module has been designed to separate as much as possible modules concerning the backtest itself from modules dedicated to trading 
+strategies development. That is why backtest a trading strategy with this tool requires at least two python files: 
+- The trading strategy file 
+- A simulation header file. 
+  
+### 1.3.1 The Simulation header file 
+
+Both file has its own dedicated structure. Here we are going to see how the simulation header file is designed and the details relative to each design step. The 
+structure of the simulation header file is presented on the figure here below where each nametag corresponds to a pythonic object, arrows refer to the insertion 
+of an instance inside another pythonic object and numbers refer to the different coding steps of the so-called simulation header file. 
+
+![](/_alphatrading/content/figures/Backtester_structure.png){: .align-center}
+
+Let describe the different involved objects with their main properties: 
+
+- **PRICE**: The *PRICE* object allows to read, interpret and prepare a dataset for the simulation. 
+- **PRICE_TABLE**: The *PRICE_TABLE* object allows to concatenate each unique PRICE object within a list and synchronize them for the simulation. 
+- **SYMBOL**: The *SYMBOL* object corresponds to the identity card of a *PRICE* object within the simulation. While the *PRICE* object contains the 
+financial dataset, the *SYMBOL* contains informations related to brokerage. *PRICE* and *SYMBOL* are linked together by providing the same *name* attribute. 
+- **PORTFOLIO**: The *PORTFOLIO* object allows to simulate your portfolio and some regularoty constraints. 
+- **SIMULATION**: The *SIMULATION* object allows to parametrize the properties related to the while loop itself and perform the backtest. 
+
+
+### 1.3.2 The Trading strategy file 
+
+All the trading strategy must be embeded in a class called ```STRATEGY```. This class contains three important methods 
+which will be called by the ```SIMULATION``` class in the backtest module: 
+
+- ```self.__init__()```: This method allows to define the trading strategy initialization parameters and important buffers. 
+- ```self.run(client)```: This method allows to execute the strategy by operating on the ```client``` parameter which correspond 
+to a ```PORTFOLIO``` class object. 
+- ```self.show(client)```: This method is not executed at each timestep but at a frequency specified by the user. It shouldn't be used 
+to run trading operations but only logging and simulation informative actions. 
+
+```python
+class STRATEGY : 
+    """ 
+    The STYRATEGY class is imported in the SIMULATION class. 
+    
+    Only 3 functions are important and executed in the backtester : 
+        - __init__ : To declare the strategy object 
+        - run      : Function called to each timestep of the simulation 
+        - show     : Function called to each log step of the simulation 
+    
+    One can add any function in this class. This will not pertubate the 
+    simulation. 
+    
+    run and show functions take in account a "client" parameter which 
+    corresponds to the "PORTFOLIO" object as declared in the simulation
+    header file. 
+    """ 
+    
+    def __init__(self) : 
+        
+        return 
+    
+    def run(self, client) : 
+        
+        return 
+    
+    def show(self, client) : 
+        
+        return
+```
 
 ## 1.5 Relevant links 
+
+To get more informations about the Alpha-Trading backtest module I suggest trying by yourself this [hands-on module](/_alphatrading/handson_simplebacktest). 
 
 
 # Models 

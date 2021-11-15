@@ -9,46 +9,38 @@ toc_sticky: true
 
 ## [Introduction](#introduction)
 
-The [Q26 Backtest System](https://q26.io/?page_id=159) is dedicated to algorithmic traders developers who only want to dedicate them to build their trading strategies in a Python 3 environment. In this tutorial, I will show you how to prepare your simulation, strategies and data files in order to get a smart framework in which you can completely focus on your strategy development. 
+The Alpha-Trading backtest system is dedicated to algorithmic traders developers who only want to dedicate them to build their trading strategies in a Python 3 environment. In this tutorial, I will show you how to prepare your simulation, strategies and data files in order to get a smart framework in which you can completely focus on your strategy development. 
 
-The Q26 Backtest System needs at least 3 files to run : 
+The Alpha-Trading Backtest System needs at least 3 files to run : 
 * The historical data file(s) 
 * The trading strategy file(s) 
 * A simulation header file 
 
-Both, the historical data file(s), the trading strategy file(s) and the Q26 Backtest System are imported in the simulation header file. Thanks to this smart structure, it is possible to add a lot of automating in your backtesting experience to perform a lot more complex simulations such as strategy parameters optimization, backtest a large number of assets/strategies ... so a potential huge gain of time. The python environment being very famous in data sciences, you can have access to a lot modules to analyze your simulation results and improve your backtest experience. 
-
-1. [Introduction](#introduction)
-
-2. [Simulation file](#simulation-file)
-
-    2.1 [Importations & paths](#importations--path)
-
-    2.2 [Data preparation](#data-preparation)
-
-    2.3 [Symbols](#symbols)
-
-    2.4 [Portfolios](#portfolios)
-
-    2.5 [Simulation](#simulation)
-
-3. [Strategy file](#strategy-file)
-
-    3.1 [Global structure](#global-structure)
-
-    3.2 [Trading functions](#trading-functions)
-
-    3.3 [Example : SMA crossover strategy](#example)
-
-4. [Results analysis](#results-analysis)
+Both, the historical data file(s), the trading strategy file(s) and the Alpha-Trading Backtest System are imported in the simulation header file. Thanks to this smart structure, it is possible to add a lot of automating in your backtesting experience to perform a lot more complex simulations such as strategy parameters optimization, backtest a large number of assets/strategies ... so a potential huge gain of time. The python environment being very famous in data sciences, you can have access to a lot modules to analyze your simulation results and improve your backtest experience. 
 
 ## [Package installation](#package-installation) 
 
-Let first install the Q26 QuanTester package. Open a terminal and type : 
+Let first install the Alpha-Trading package. Open a terminal and type : 
 
 ```shell
-pip install q26-quanTester
+pip install q26-alphatrading
 ```
+
+Or, if you want to work with the Alpha-Trading development package (what I suggest to you for instance), go to the [Github](https://github.com/LoannData/Q26_AlphaTrading) repository of the project and clone it to your local system according the following command 
+
+```shell 
+git clone https://github.com/LoannData/Q26_AlphaTrading.git
+```
+
+Open a new terminal in the Q26_AlphaTrading folder and now you can locally install the package using the ```pip``` command: 
+
+```shell 
+bash ./compile.sh 
+sleep(1)
+bash ./install.sh 
+```
+
+**Note**: If you want to contribute to the developpement of the project, you can also fork it to your own. 
 
 ## [Simulation file](#simulation-file)
 
@@ -56,7 +48,7 @@ Let's by start building a simple simulation file header. At first you have to cr
 
 ### [Importations & paths](#importations--path)
 
-I suggest first to import some useful modules in order to manage any objects the Q26 Backtest System manipulates. 
+I suggest first to import some useful modules in order to manage any objects the Alpha-Trading Backtest System manipulates. 
 
 ```python
 # Usual modules importations 
@@ -72,12 +64,12 @@ import copy
 Now you are ready to import the different Q26 Backtest System classes. 
 
 ```python 
-# Q26 BacktestSystem class importations 
-from quanTest.symbol     import SYMBOL
-from quanTest.portfolio  import PORTFOLIO 
-from quanTest.data       import PRICE 
-from quanTest.data       import PRICE_TABLE
-from quanTest.simulation import SIMULATION
+# Alpha-Trading Backtest System class importations 
+from alphatrading.simulation.backtester.symbol     import SYMBOL
+from alphatrading.simulation.backtester.portfolio  import PORTFOLIO 
+from alphatrading.simulation.backtester.data       import PRICE 
+from alphatrading.simulation.backtester.data       import PRICE_TABLE
+from alphatrading.simulation.backtester.simulation import SIMULATION
 ```
 Let's describe a bit the role of each imported class : 
 * The SYMBOL class allows to provide a symbol identity to the simulator. For example, if you want to backtest your trading strategy on XAU.USD symbol, you will need to provide some information such as the contract size, the minimum margin percentage, the margin request method (~ type of product) ... 
@@ -85,7 +77,7 @@ Let's describe a bit the role of each imported class :
 * The PRICE and PRICE_TABLE classes are used to store and prepare the historical data. They propose a lot of functionalities and allow to backtest number of assets simultaneously. 
 * The SIMULATION class contains all the important parameters and functions to perform a smart simulation.   
 
-To get more information about the attributes and the member functions of these classes, I suggest you to check the detailed code documentation [here](https://q26.io/data/q26_backtest_system/doc/html/annotated.html). 
+To get more information about the attributes and the member functions of these classes, I suggest you to check the detailed code documentation [here](/_alphatrading/html/namespacealphatrading_1_1simulation_1_1backtester.html). 
 
 
 ### [Data preparation](#data-preparation)
@@ -98,7 +90,7 @@ path  = "./"
 path += "exampleDataFile.csv"
 ```
 
-Then, let's create a [PRICE](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1data_1_1PRICE.html) object.  
+Then, let's create a [PRICE](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE.html) object.  
 
 ```python 
 # We create an object PRICE and give it a name 
@@ -119,7 +111,7 @@ Now, we have to explain to our system how to read and interpret the datafile we 
 | 2020.01.01 | 17:05 | 1.121250 | 1.121270 | 1.121250 | 1.121270 | 0   |
 | 2020.01.01 | 17:06 | 1.121270 | 1.121270 | 1.121270 | 1.121270 | 0   |
 
-To explain to the system how to read it, let's use the command : setColumnsTitle.
+To explain to the system how to read it, let's use the command : [setColumnsTitle](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE.html#a1eea86523468850f44d8c2557132fb45).
 
 ```python 
 # We associate the name of the columns in the datafile with 
@@ -144,24 +136,24 @@ price.setColumnsTitle(askOpen        ="open",
 ```
 
 Let's note some points : 
-* Our historical data don't provide bid/ask information. But the Q26 Backtest System requires it. As made in the code, you can read ohlc columns two times, one for the bid and one for the ask, this will just lead to a 0 spread. 
+* Our historical data don't provide bid/ask information. But the Alpha-Trading Backtest System requires it. As made in the code, you can read ohlc columns two times, one for the bid and one for the ask, this will just lead to a 0 spread. 
 * In some datasets, the time is presented in a unique column while in some others (like in this dataset), the time is splitted between days and hours. The setColumnsTitle has a parameter for that : splitDaysHours. If False, you have to provide the name of the time column in the parameter date. If True, you can let date to None and you have to provide the name of the columns corresponding to days and hours. 
 
-Then, we can read the datafile. 
+Then, we can read the datafile with the command [read](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE.html#a523730f8f49f1bfa0f7bbb607be45ce5). 
 
 ```python 
 # We read the data
 price.read(path)
 ```
 
-When this has been done, we have to specify the timeframe of the data we are going to simulate. 
+When this has been done, we have to specify the timeframe of the data we are going to simulate using the method [setBaseTimeframe](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE.html#a3d32bd897cd40ac0ec85de6febf05f74). 
 
 ```python 
 # We define the timeframe associated to the loaded data 
 price.setBaseTimeframe(timeframe = dt.timedelta(minutes = 1))
 ```
 
-And we have to prevent the missing data in our datafile by using the following function. 
+And we have to prevent the missing data in our datafile by using the following function: [fillMissingData](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE.html#a0c2cfd3bd19b38ea6f35c39b814b5260). 
 
 ```python 
 # We fill the missing data according to a data filling model 
@@ -190,7 +182,8 @@ marketBreakList      = list()
 price.daysOfWeek = [0, 1, 2, 3, 4]
 ```
 
-And finally, according to the time details we provided, the algorithm will generate for every piece of time data an information about if the market is open of not. 
+And finally, according to the time details we provided, the algorithm will generate for every piece of time data an information about if the market is open of not. This 
+happen in the function [setMarketState](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE.html#ac2d310c0f53aab16c269de1fb82f62df) 
 
 ```python 
 # Function that defines if the market is open/close 
@@ -201,7 +194,7 @@ Now we have prepared the data dedicated to the simulation.
 
 However, in our trading strategy, we are not especially going to use such a low timeframe data, we may for example want to use H1 data. One way to get this new data is to re-sample it directly from the trading strategy. But it is numerically very costly and it destroys the algorithm trading environment experience of the user. That's why we propose a smarter solution. 
 
-Before running any backtest, you prepare all the re-sampled data you will need in your strategies. For example in this tutorial we will need H1 data. To get this data, we create a copy of our initial EUR.USD data and we re-sample it to the H1 timeframe. 
+Before running any backtest, you prepare all the re-sampled data you will need in your strategies. For example in this tutorial we will need H1 data. To get this data, we create a copy of our initial EUR.USD data and we re-sample it to the H1 timeframe with the method: [resampleData](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE.html#aad5573e679cb8310e9e005caa1b6efd6). 
 
 ```python 
 # From the price object, it is possible to define another exact same object 
@@ -215,7 +208,7 @@ price_H1.resampleData("01:00", name = "EUR.USD")
 
 We get a second PRICE object called price_H1. Note that it is extremely important to keep the exact same name if we want to retrieve historical data in the standard way in the trading strategy file(s).  
 
-We can finally agreggate our data in a [PRICE_TABLE](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1data_1_1PRICE__TABLE.html) object and synchronize them. 
+We can finally agreggate our data in a [PRICE_TABLE](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1data_1_1PRICE__TABLE.html) object and synchronize it. 
 
 ```python 
 # We generate our data table which will be involved in the simulation 
@@ -231,7 +224,7 @@ We are finally done with the data preparation ! It was the hardest part !
 
 ### [Symbols](#symbols)
 
-Let's implement our [SYMBOL](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1symbol_1_1SYMBOL.html) object. It is simple as that : 
+Let's implement our [SYMBOL](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1symbol_1_1SYMBOL.html) object. It is simple as that : 
 
 ```python 
 symbol = SYMBOL(symbolName              = "EUR.USD",
@@ -255,7 +248,7 @@ Note that all the parameters are not used by the simulator for instance. I let y
 
 ### [Portfolios](#portfolios)
 
-We can then initialize our [PORTFOLIO](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1portfolio_1_1PORTFOLIO.html) object with all the usefull parameters. See the doc for more details. 
+We can then initialize our [PORTFOLIO](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1portfolio_1_1PORTFOLIO.html) object with all the usefull parameters. See the doc for more details. 
 
 ```python 
 # We initialize our portfolio 
@@ -275,11 +268,11 @@ p = PORTFOLIO(initialDeposit                  = 100000,                # The ini
 # We add the symbol identity we created inside the portfolio object 
 p.addSymbol(symbol)
 ``` 
-And we add the symbol we prepared inside the portfolio via the function addSymbol(). 
+And we add the symbol we prepared inside the portfolio via the function [addSymbol()](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1portfolio_1_1PORTFOLIO.html#a14e16799e708a6bea1cce5959816c5a6). 
 
 ### [Simulation](#simulation)
 
-We can finally start to initialize our [SIMULATION](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1simulation_1_1SIMULATION.html) object by using the following instruction : 
+We can finally start to initialize our [SIMULATION](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1simulation_1_1SIMULATION.html) object by using the following instruction : 
 
 ```python 
 # We initialize the simulation object 
@@ -299,7 +292,7 @@ sim.logEvery = 1000
 ```
 
 Some details : 
-* The [sub-loop](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1simulation_1_1SIMULATION.html#aacf7dc6d4d6b01e42bbd2851baf9c961) model represent the way the algorithm will present the sub-candle scale data to the trading strategy file(s). For example here we selected the "close only" sub-loop models meaning that only close price of candles will be presented to the strategies. Another model is "ohlc standard". This means that for every base candle, the algorithm will sequentially present open, high, low and finally close price to the strategy file(s). 
+* The [sub-loop](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1simulation_1_1SIMULATION.html#aacf7dc6d4d6b01e42bbd2851baf9c961) model represent the way the algorithm will present the sub-candle scale data to the trading strategy file(s). For example here we selected the "close only" sub-loop models meaning that only close price of candles will be presented to the strategies. Another model is "ohlc standard". This means that for every base candle, the algorithm will sequentially present open, high, low and finally close price to the strategy file(s). 
 * The maxHstDataSize corresponds to a buffer size of how many candle historical data can be available to trading strategies. This value has to be adjusted according the needs of the strategies and have to be minimized to optimize the calculation time. 
 * The start/stop indexes corresponds to the index of base data where simulation starts/stops. The start index has to be higher or equal than the maxHstDataSize if you want to have enough available historical data in your trading strategy file(s). Note that here the stop index hasn't been specified. By defaut, it has an unfinite like value meaning that the simulation will go up to the end of the dataset.
 * logEvery variable corresponds to frequency at which the algo prints a percentage and activates the [show()](#global-structure) function in the strategy file(s). 
@@ -314,7 +307,7 @@ sim.strategyFile = ["strategyExample"]
 sim.importStrategy()
 ```
 
-We can finally run the simulation according our prefered [running mode](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1simulation_1_1SIMULATION.html#a4c9217c6c17c58f0e44453341d994905) 
+We can finally run the simulation according our prefered [running mode](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1simulation_1_1SIMULATION.html#a9ae1e9bffddf17c3d2ed8c2966c6fdf0) 
 
 ```python 
 # Run of the simulation 
@@ -322,6 +315,8 @@ sim.run(mode = "linear")
 ```
 
 This is done for the simulation header file. As you can see, this file has a large potential of personalization and optimization. 
+
+**Note:** In the header file, you also have to configure the simulation logging system. Check the [paragraph](#logging-system-configuration) below to get more informations. 
 
 ## [Strategy file](#strategy-file)
 
@@ -368,7 +363,7 @@ You can see that with a such structure you have a very large flexibility as you 
  
 ### [Trading functions](#trading-functions)
 
-Inside the run(client) function, you have access to a bunch of client.functions() accessible [here](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1portfolio_1_1PORTFOLIO.html). 
+Inside the run(client) function, you have access to a bunch of client.functions() accessible [here](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1portfolio_1_1PORTFOLIO.html). 
 
 ### [Example : SMA crossover strategy](#example)
 
@@ -534,9 +529,106 @@ Exactly as if we were trading for real. And we can also show some information in
 Simple as that ! 
 
 
+## [Logging system configuration](#logging-system-configuration)
+
+### In the simulation header file
+
+In order to follow as much accurately as possible your backtest events, the Alpha-Trading Backtest system integrates a logging system which 
+is fully customizable and generate databases you can explore with your prefered tool. In the simulation header file, the logging system is 
+managed by the method [set_database](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1simulation_1_1SIMULATION.html#a8a6b853ff13caa548899e1d6a6df2f8a) as following: 
+
+```python
+sim.set_database(client_id=0, 
+                 name="sma_crossover_strategy_logfile", 
+                 path="./", 
+                 model="sqlite3", 
+                 log = True, 
+                 tables = tables)
+```
+
+The ```client_id``` parameter refers to the index position of the portfolio on which you want to set a database. Here we have only one portfolio so the default 
+id is 0. The ```names``` and ```path``` parameters refers to the database name and its location in the user's system. The parameter ```model``` corresponds to 
+the database language used. For instance sqlite3 is the only choice. The ```log``` parameter is a boolean refering to which or not the user want to print out a 
+*default* log table in the database which contains informations about the [trading_log_actions](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1portfolio_1_1PORTFOLIO.html#a3ee65ef078f407d29d5145bb1479a54f) in the client instance. This means that the system will save 
+any simulation information in the database. Finally the most important parameter is the parameter ```tables```. 
+
+Here, ```tables``` refers to a list of custom tables you want to create in the database. By default this list is empty. If you want to add a custom table in your 
+database, one needs to follow the structure given by the example here below: 
+
+```python 
+tables = [
+    {"name"     : "simulation_variables", 
+     "structure": {
+         "date"                                       : "str", 
+         "available_margin"                           : "float",
+         "balance"                                    : "float", 
+         "number_closed_positions"                    : "int",
+         "number_currently_open_positions"            : "int",
+         "number_pending_orders"                      : "int",
+         "current_drawdown"                           : "float", 
+         "current_maximum_number_of_consecutive_gains": "int", 
+         "current_value_gain_serie"                   : "float", 
+         "current_value_loss_serie"                   : "float", 
+         "equity_balance"                             : "float", 
+         "number_executed_orders"                     : "int", 
+         "margin_level"                               : "float", 
+         "used_margin"                                : "float"
+     }}
+]
+```
+
+Here the ```tables``` object contains only one custom table. Each table is represented by a python dictionary with two main keys: 
+- The ```name``` of the table. It corresponds to the name of the table as it will be attributed in the database. 
+- The ```structure``` of the table. The associated value of this parameter is also a dictionary where the keys refer to the column names 
+and the associated value refers to the data type (in python syntax and string formatted). 
+
+At the begining of the simulation, the tool will create the database and the default ```log``` table if you set the parameter 
+
+```python
+log = True
+```
+
+and each custom table you prepared. Now it's time to fill the custom tables in the strategy file!  
+
+### In the strategy file 
+
+Lets continue with our ```simulation_variables``` table example. During the simulation, elements can be added to custom table with the command 
+
+```python 
+simulation_variables = [
+    str(self.lastPrice.get("date")),
+    client.availableMargin, 
+    client.balance, 
+    len(client.closedPositions),
+    len(client.openPositions), 
+    len(client.pendingOrders),
+    client.currentDrawDown, 
+    client.currentMaximumNumberOfConsecutiveGains, 
+    client.currentValueGainSerie, 
+    client.currentValueLossSerie, 
+    client.equity, 
+    len(client.executedOrders), 
+    client.marginLevel, 
+    client.usedMargin
+]
+
+# Write some info into the database 
+client.database.insert_element("simulation_variables", simulation_variables)
+```
+
+One just needs to prepare a list of the elements specified in the table structure in the header (and in the right order) and pass them to the database. That's it! 
+
+Some important points: 
+- Because this process can be extremely usefull to create meta-labeling this function can be written everywhere in your ```STRATEGY``` class. However you have to 
+notice that if you do not prepare the exact same database in live trading, this will lead to an error. The client attributes I retrieve here are not necessarly 
+available in live trading mode, this can also lead to an error if you keep this as is in live trading mode. Hence, I suggest that you add a variable ```simulation = True``` in your ```STRATEGY.__init__()``` method so that you can both use it in backtest and live mode.  
+- Retrieve a lot of informations for future analyses is usefull, but take care to the amount of data you keep. The database can become rapidely very heavy and 
+it can considerably slow down the simulation. In particular, for a fast simulation, in the header file I suggest you to set the parameter ```log = False``` or 
+at least remove useless elements in the ```PORTFOLIO.trading_log_actions``` list. 
+
 ## [Results analysis](#results-analysis)
 
-Once you have done your simulation, you can get the results. The available functions to print results from the simulation are stored in the classes [WRITER](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1writer_1_1WRITER.html) and [ANALYSIS](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1analysis_1_1ANALYSIS.html). You can directly apply them to the SIMULATION object as for example : 
+Once you have done your simulation, you can get the results. The available functions to print results from the simulation are stored in the classes [WRITER](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1writer_1_1WRITER.html) and [ANALYSIS](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1analysis_1_1ANALYSIS.html). You can directly apply them to the SIMULATION object as for example : 
 
 ```python 
 # We write the results in a csv file 
@@ -545,4 +637,15 @@ sim.writeClosedPositionsFile(index = 0)
 fig, ax = sim.showEquityCurve(index = [0])
 ```
 
-But if you want to make a personal data analysis, you can directly get information from the [SIMULATION.portfolio[index]](https://q26.io/data/q26_backtest_system/doc/html/classquanTest_1_1portfolio_1_1PORTFOLIO.html) object. Here are stored all the transactions history and the equity curve. 
+But if you want to make a personal data analysis, you can directly get information from the [SIMULATION.portfolio[index]](/_alphatrading/html/classalphatrading_1_1simulation_1_1backtester_1_1portfolio_1_1PORTFOLIO.html) object. Here are stored all the transactions history and the equity curve. 
+
+**This last part will be improved soon ...**
+
+## Conclusion 
+
+Thank you for following this hands-on. If you found any bug or any mistake, if you want to comment something or suggest an improvement, 
+please do not hesitate to create an issue [here](https://github.com/LoannData/Q26_AlphaTrading/issues). 
+
+Retrive the hands-on files here: 
+
+[Hands-On files](https://github.com/LoannData/Q26_AlphaTrading/tree/master/examples/backtester/simple_backtest){: .btn .btn--success .btn--large}

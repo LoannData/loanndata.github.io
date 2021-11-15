@@ -2,6 +2,8 @@
 permalink: /resume/
 title: "Resume"
 ---
+[PDF French](/_resume/CV_Loann_BRAHIMI_fr.pdf){: .btn .btn--success .btn--large}
+[PDF English](/_resume/CV_Loann_BRAHIMI_en.pdf){: .btn .btn--success .btn--large}
 
 ## [Work Experience](experience.md)
 
