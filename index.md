@@ -9,7 +9,7 @@ classes: wide
 ---
 [1]: https://ui.adsabs.harvard.edu/search/filter_author_facet_hier_fq_author=AND&filter_author_facet_hier_fq_author=author_facet_hier%3A%220%2FBrahimi%2C%20L%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq=%7B!type%3Daqp%20v%3D%24fq_author%7D&fq_author=(author_facet_hier%3A%220%2FBrahimi%2C%20L%22)&fq_database=database%3A%20astronomy&p_=0&q=author%3A(%22Brahimi%22)&sort=date%20desc%2C%20bibcode%20desc
 
-Welcome! I am a Research Scientist with an experience on Computational Physics, Artificial Intelligence and Data Driven systems applied to financial markets. I earned my Ph.D in Astrophysics from the [University of Montpellier](https://www.umontpellier.fr/) and I am currently working as a Quantitative Developer and Strategist applied to financial markets. 
+Welcome ! I am a Research Scientist with an experience on Computational Physics, Artificial Intelligence and Data Driven systems applied to financial markets. I earned my Ph.D in Astrophysics from the [University of Montpellier](https://www.umontpellier.fr/) and I am currently working as a Quantitative Developer and Strategist applied to financial markets. 
 
 ## Doctor of Philosophy
 
