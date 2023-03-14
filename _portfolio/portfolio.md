@@ -8,8 +8,6 @@ classes: wide
 
 ## Quantitative Finance 
 
-*2021* - **Systematic Trading Software - Hedge-Fund** 
-
 *2020* - [**Algorithmic Trading Environment**](/_alphatrading/)
 
 The Alpha-Trading tool is an open-source python library designed to develop, test and run algorithmic trading strategies inside a normalized, free and fully customizable environment.
