@@ -3,6 +3,30 @@ permalink: /_resume/experience/
 title: "Work experiences"
 ---
 
+## 2022-...: CTO & Quantitative Analyst, Hedge Fund Director
+
+*Taranis SA - Geneva, Switzerland*
+
+**Context:**
+
+Taranis SA is a Swiss Asset Management Start-up Company investing in global equity markets. Our investment methodology is fully 
+systematic and based on a proprietary technology combining alternative data approach, pattern detection algorithm and original 
+statistical indicator combination. 
+
+**Works:** 
+
+- Management of operational trading activities on a E-Mini S&P500 & NQ100 Futures Portfolio. Execution of the investment strategies from the management team.
+- Development and maintenance of a whole trading pipeline: data scraping and storage, trading strategy execution, risk management and 
+  reporting systems. 
+- Development and implementation of algorithmic investment strategies, data engineering and quantitative research. 
+- Hedge Fund Cayman based director registered to CIMA. Administrative management of the fund.  
+
+**Tools:** 
+
+- Python and libraries: Scikit-learn, Scipy, Statsmodels, Pandas, Numpy, Plotly ... 
+- Frameworks: SQLite, PostgreSQL, IBKR TWS/Gateway, Office Suite
+
+
 ## 2020-2021: Co-founder & Full Stack Quant Developer/Researcher
 
 *Q26 Project - Montpellier, France*
