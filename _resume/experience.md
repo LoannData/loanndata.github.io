@@ -3,7 +3,7 @@ permalink: /_resume/experience/
 title: "Work experiences"
 ---
 
-## 2022-...: CTO & Quantitative Analyst, Hedge Fund Director
+## 2022-...: Quantitative Analyst & Systematic Trader
 
 *Taranis SA - Geneva, Switzerland*
 
