@@ -10,8 +10,7 @@ title: "Work experiences"
 **Context:**
 
 Taranis SA is a Swiss Asset Management Start-up Company investing in global equity markets. Our investment methodology is fully 
-systematic and based on a proprietary technology combining alternative data approach, pattern detection algorithm and original 
-statistical indicator combination. 
+systematic and based on a proprietary technology.
 
 **Works:** 
 
